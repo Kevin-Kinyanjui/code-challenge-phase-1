@@ -1,17 +1,17 @@
 
 function renderABeer(beer){
-    let card = document.createElement('li')
-    card.className = 'card'
-    card.innerHTML = `
-    <img src="${beer.imageUrl}">
-    <div class="content">
-        <h4>${beer.name}</h4>
-        <p>
-            $<span class="beer.description">${beer.description}</span>
-        </p>
-        <p>${beer.reviews}</p>
-    `
-    document.querySelector('#beer-description').appendChild(card)
+    const beerList = document.querySelector('#beer-list')
+    const beerName = document.querySelector('#beer-name')
+    const beerDescription = document.querySelector('#beer-description')
+    const beerReview = document.querySelector('#review-list')
+
+    beerList.innerHTML =` 
+        <div class="content"> <h4>${beer.name}</h4> 
+        <div class="content"> <h4>${beername1}</h4> 
+        <div class="content"> <h4>${beername2}</h4> `
+    beerName.innerHTML = `<div class="content"> <h4>${beer.name}</h4> `
+    beerDescription.innerHTML = ` <p>  $<span class="beer.description">${beer.description}</span> </p> `
+    beerReview.innerHTML =  ` <p>${beer.reviews}</p> `
 }
 
 function getAllBeer(){
@@ -29,6 +29,8 @@ initialize()
 const reviewList = document.getElementById('review-list');
 const reviewForm = document.getElementById('review-form');
 const ButtonSubmitReview = document.getElementById('submitBtn');
+const beername1 = "Pilsen Lager"
+const beername2 = "Avery Brown Dredge"
 
 document.addEventListener('DOMContentLoaded', () => {
     reviewForm.addEventListener('submit', (e) => {
